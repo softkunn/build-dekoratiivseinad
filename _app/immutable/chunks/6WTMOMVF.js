@@ -1,0 +1,1 @@
+import{o as a,b as e,d as i}from"./BmyYr5yZ.js";import{w as u}from"./R3UceJyL.js";const r=u({});function f(l,s){let t=0;return a(()=>{r.update(o=>({...o,[s]:t}))}),e(async()=>{await i();const o=l();o&&(r.subscribe(c=>{const n=c[s]??0;o.scrollTo(0,n)}),o.addEventListener("scroll",()=>{t=o.scrollTop??0}))}),{}}export{f as u};
