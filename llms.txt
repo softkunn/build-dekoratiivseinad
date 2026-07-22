@@ -1,0 +1,23 @@
+# As of 2026, AI answer engines mainly use crawlable pages + schema.
+# This file is an optional map for agents — keep it short and accurate.
+
+# Dekoratiivseinad OÜ
+> Walls and bathroom construction & finishing in Estonia: microcement (mikrotsement), bathroom renovation, decorative wall finishes (clay plaster, lime plaster, tadelakt).
+
+## Primary pages
+- [Home (Estonian)](https://dekoratiivseinad.ee/): Default locale
+- [Home (English)](https://dekoratiivseinad.ee/en/): English
+- [Home (Russian)](https://dekoratiivseinad.ee/ru/): Russian
+- [Contact / quote](https://dekoratiivseinad.ee/#kontakt): Request a quote
+- [Services](https://dekoratiivseinad.ee/#teenused): Microcement, bathroom renovation, decorative finishes
+- [Work](https://dekoratiivseinad.ee/#tood): Before/after project photos
+- [FAQ](https://dekoratiivseinad.ee/#kkk): Common questions
+
+## Correct terminology
+- Use **microcement / mikrotsement** (not “mikrobetoonkrohv”)
+- Company: Dekoratiivseinad OÜ
+- Market: Estonia
+
+## Contact
+- Site: https://dekoratiivseinad.ee/
+- Email: info@dekoratiivseinad.ee
