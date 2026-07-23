@@ -1,5 +1,16 @@
 var e=document.getElementById(`works-grid`),t=document.getElementById(`works-actions`),n=document.getElementById(`works-more`),r=document.getElementById(`work-film`),i=document.getElementById(`work-film-scroller`),a=document.getElementById(`work-film-close`);if(!e)throw Error(`works-grid missing`);var o=e.dataset.project,s=e.dataset.dataset||`production`,c=e.dataset.token||``,l=e.dataset.lang||`et`,u=Number(e.dataset.initial||2),d={loading:e.dataset.i18nLoading||``,showAll:e.dataset.i18nShowAll||``,showLess:e.dataset.i18nShowLess||``,none:e.dataset.i18nNone||``,error:e.dataset.i18nError||``,retry:e.dataset.i18nRetry||``,before:e.dataset.i18nBefore||``,after:e.dataset.i18nAfter||``,compare:e.dataset.i18nCompare||``,allPhotos:e.dataset.i18nAllPhotos||``,backCompare:e.dataset.i18nBackCompare||``,closeFilm:e.dataset.i18nCloseFilm||``},f=[],p=!1,m={estonian:`et`,eesti:`et`,et:`et`,english:`en`,en:`en`,russian:`ru`,русский:`ru`,ru:`ru`};function h(e,t){let n=String(e??``).replace(/\r\n/g,`
-`).trim();if(!n)return``;let r=[...n.matchAll(/^#\s*([^\n#]+?)\s*$/gm)];if(!r.length)return n;let i={};for(let e=0;e<r.length;e++){let t=r[e],a=m[(t[1]||``).trim().toLowerCase()];if(!a)continue;let o=(t.index??0)+t[0].length,s=e+1<r.length?r[e+1].index:n.length,c=n.slice(o,s).trim();c&&(i[a]=c)}return Object.keys(i).length&&(i[t]||i.et||i.en||i.ru)||n}function g(e){return String(e??``).replaceAll(`&`,`&amp;`).replaceAll(`<`,`&lt;`).replaceAll(`>`,`&gt;`).replaceAll(`"`,`&quot;`)}function _(e,t=1e3,n=`crop`){if(!e)return``;let r=e.replace(`image-`,``).split(`-`),i=r.slice(0,-1).join(`-`),a=r[r.length-1]||`jpg`,c=n===`max`?``:`&h=${Math.round(t*1.25)}`;return i?`https://cdn.sanity.io/images/${o}/${s}/${i}.${a}?w=${t}${c}&fit=${n}&auto=format`:``}function v(e,t,n){let r=e.filter(Boolean),i=[t,...n].filter(Boolean),a=[],o=Math.max(r.length,i.length);for(let e=0;e<o;e++)r[e]&&a.push({ref:r[e],kind:`before`}),i[e]&&a.push({ref:i[e],kind:`after`});return a}function y(e){return typeof document.startViewTransition==`function`?document.startViewTransition(e):(e(),null)}function b(e,t){let n=_(e),r=_(t);return r?n?`<div class="ba" data-ba style="--pos: 52%">
+`).trim();if(!n)return``;let r=[...n.matchAll(/^#\s*([^\n#]+?)\s*$/gm)];if(!r.length)return n;let i={};for(let e=0;e<r.length;e++){let t=r[e],a=m[(t[1]||``).trim().toLowerCase()];if(!a)continue;let o=(t.index??0)+t[0].length,s=e+1<r.length?r[e+1].index:n.length,c=n.slice(o,s).trim();c&&(i[a]=c)}return Object.keys(i).length&&(i[t]||i.et||i.en||i.ru)||n}function g(e){return String(e??``).replaceAll(`&`,`&amp;`).replaceAll(`<`,`&lt;`).replaceAll(`>`,`&gt;`).replaceAll(`"`,`&quot;`)}function _(e,t=1e3,n=`crop`){if(!e)return``;let r=e.replace(`image-`,``).split(`-`),i=r.slice(0,-1).join(`-`),a=r[r.length-1]||`jpg`,c=n===`max`?``:`&h=${Math.round(t*1.25)}`;return i?`https://cdn.sanity.io/images/${o}/${s}/${i}.${a}?w=${t}${c}&fit=${n}&auto=format`:``}function v(e,t,n){let r=e.filter(Boolean),i=[t,...n].filter(Boolean),a=[],o=Math.max(r.length,i.length);for(let e=0;e<o;e++)r[e]&&a.push({ref:r[e],kind:`before`}),i[e]&&a.push({ref:i[e],kind:`after`});return a}function y(e){return typeof document.startViewTransition==`function`?document.startViewTransition(e):(e(),null)}function b(e,t){let n=_(e),r=_(t);return r?n?`<div
+          class="ba"
+          data-ba
+          style="--pos: 52%"
+          role="slider"
+          tabindex="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="52"
+          aria-orientation="horizontal"
+          aria-label="${g(d.compare)}"
+        >
           <img class="ba__after" src="${r}" alt="${g(d.after)}" loading="lazy" width="1000" height="1250" draggable="false" />
           <div class="ba__before-clip" aria-hidden="true">
             <img class="ba__before" src="${n}" alt="" loading="lazy" width="1000" height="1250" draggable="false" />
@@ -7,14 +18,7 @@ var e=document.getElementById(`works-grid`),t=document.getElementById(`works-act
           <span class="ba__tag ba__tag--before">${g(d.before)}</span>
           <span class="ba__tag ba__tag--after">${g(d.after)}</span>
           <div class="ba__handle" aria-hidden="true"><span></span></div>
-          <input
-            class="ba__range"
-            type="range"
-            min="0"
-            max="100"
-            value="52"
-            aria-label="${g(d.compare)}"
-          />
+          <input class="ba__range" type="range" min="0" max="100" value="52" tabindex="-1" aria-hidden="true" />
         </div>`:`<figure class="ba-single">
             <img src="${r}" alt="${g(d.after)}" loading="lazy" width="1000" height="1250" />
             <figcaption>${g(d.after)}</figcaption>
@@ -50,7 +54,7 @@ var e=document.getElementById(`works-grid`),t=document.getElementById(`works-act
             ${x(i)}
           </div>
           ${S(i.length)}
-        </article>`}function w(e){e.querySelectorAll(`[data-ba]`).forEach(e=>{let t=e.querySelector(`.ba__range`);if(!(t instanceof HTMLInputElement))return;let n=n=>{let r=Math.max(0,Math.min(100,Number(n)));e.style.setProperty(`--pos`,`${r}%`),t.value=String(r)};t.addEventListener(`input`,()=>n(t.value));let r=t=>{if(t.pointerType===`mouse`&&t.buttons===0)return;let r=e.getBoundingClientRect();if(!r.width)return;let i=(t.clientX-r.left)/r.width*100;n(i)};e.addEventListener(`pointerdown`,n=>{n.target!==t&&(e.setPointerCapture(n.pointerId),r(n))}),e.addEventListener(`pointermove`,t=>{e.hasPointerCapture(t.pointerId)&&r(t)})})}function T(e){let t=e.querySelector(`[data-work-mode]`);if(!(t instanceof HTMLButtonElement))return;let n=e.querySelector(`[data-gallery]`)?.querySelectorAll(`.work-shot`).length||0,r=e.classList.contains(`is-gallery`);t.setAttribute(`aria-pressed`,r?`true`:`false`),t.textContent=r?d.backCompare:`${d.allPhotos} (${n})`}function E(){!r||r.hidden||y(()=>{r.hidden=!0,i&&(i.innerHTML=``),document.body.classList.remove(`is-film-open`)})}function D(e,t){!r||!i||(i.innerHTML=e.map((e,t)=>{let n=e.kind===`before`?d.before:d.after;return`<figure class="work-film__frame" data-film-frame="${t}">
+        </article>`}function w(e){e.querySelectorAll(`[data-ba]`).forEach(e=>{let t=e.querySelector(`.ba__range`);if(!(t instanceof HTMLInputElement))return;let n=n=>{let r=Math.max(0,Math.min(100,Number(n)));e.style.setProperty(`--pos`,`${r}%`),t.value=String(r),e.setAttribute(`aria-valuenow`,String(Math.round(r)))};e.addEventListener(`click`,t=>{let r=e.getBoundingClientRect();r.width&&n((t.clientX-r.left)/r.width*100)}),e.addEventListener(`keydown`,e=>{let r=e.shiftKey?10:5,i=Number(t.value);if(e.key===`ArrowLeft`||e.key===`ArrowDown`)i-=r;else if(e.key===`ArrowRight`||e.key===`ArrowUp`)i+=r;else if(e.key===`Home`)i=0;else if(e.key===`End`)i=100;else return;e.preventDefault(),n(i)})})}function T(e){let t=e.querySelector(`[data-work-mode]`);if(!(t instanceof HTMLButtonElement))return;let n=e.querySelector(`[data-gallery]`)?.querySelectorAll(`.work-shot`).length||0,r=e.classList.contains(`is-gallery`);t.setAttribute(`aria-pressed`,r?`true`:`false`),t.textContent=r?d.backCompare:`${d.allPhotos} (${n})`}function E(){!r||r.hidden||y(()=>{r.hidden=!0,i&&(i.innerHTML=``),document.body.classList.remove(`is-film-open`)})}function D(e,t){!r||!i||(i.innerHTML=e.map((e,t)=>{let n=e.kind===`before`?d.before:d.after;return`<figure class="work-film__frame" data-film-frame="${t}">
               <div class="work-film__shot">
                 <img src="${_(e.ref,1600,`max`)}" alt="${g(n)} ${t+1}" width="1600" height="2000" />
                 <figcaption>${g(n)}</figcaption>
