@@ -11,13 +11,28 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://dekoratiivseinad.ee/vannitoa-remont/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dekoratiivseinad.ee/mikrotsement/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://dekoratiivseinad.ee/dekoratiivkrohv/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://dekoratiivseinad.ee/en/</loc>
     <xhtml:link rel="alternate" hreflang="et" href="https://dekoratiivseinad.ee/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://dekoratiivseinad.ee/en/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://dekoratiivseinad.ee/ru/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dekoratiivseinad.ee/" />
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dekoratiivseinad.ee/ru/</loc>
@@ -26,6 +41,6 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://dekoratiivseinad.ee/ru/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dekoratiivseinad.ee/" />
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
